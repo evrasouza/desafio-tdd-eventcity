@@ -1,10 +1,10 @@
 package com.devsuperior.bds02.services.exceptions;
 
-public class ResourceNotFoundExeception extends RuntimeException{
+public class ResourceNotFoundException extends RuntimeException{
 
 	private static final long serialVersionUID = 1L;
 	
-	public ResourceNotFoundExeception (String msg) {
+	public ResourceNotFoundException (String msg) {
 		super(msg);
 	}
 	

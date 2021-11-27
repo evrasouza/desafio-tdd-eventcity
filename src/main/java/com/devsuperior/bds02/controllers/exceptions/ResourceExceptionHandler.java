@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import com.devsuperior.bds02.services.exceptions.DatabaseException;
-import com.devsuperior.bds02.services.exceptions.ResourceNotFoundExeception;
+import com.devsuperior.bds02.services.exceptions.ResourceNotFoundException;
 
 
 @ControllerAdvice
 public class ResourceExceptionHandler {
 	
-	@ExceptionHandler(ResourceNotFoundExeception.class)
-	public ResponseEntity<StandardError> entityNotFound(ResourceNotFoundExeception e, HttpServletRequest request) {
+	@ExceptionHandler(ResourceNotFoundException.class)
+	public ResponseEntity<StandardError> entityNotFound(ResourceNotFoundException e, HttpServletRequest request) {
 		HttpStatus status = HttpStatus.NOT_FOUND;
 		StandardError err = new StandardError();
 		err.setTimestamp(Instant.now());

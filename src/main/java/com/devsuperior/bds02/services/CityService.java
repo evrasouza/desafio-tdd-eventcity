@@ -14,7 +14,7 @@ import com.devsuperior.bds02.dto.CityDTO;
 import com.devsuperior.bds02.entities.City;
 import com.devsuperior.bds02.repositories.CityRepository;
 import com.devsuperior.bds02.services.exceptions.DatabaseException;
-import com.devsuperior.bds02.services.exceptions.ResourceNotFoundExeception;
+import com.devsuperior.bds02.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class CityService {
@@ -42,7 +42,7 @@ public class CityService {
 		try {
 			repository.deleteById(id);
 		} catch(EmptyResultDataAccessException e){
-			throw new ResourceNotFoundExeception("Id Not Found" + id);			
+			throw new ResourceNotFoundException("Id Not Found" + id);			
 		} catch(DataIntegrityViolationException e) {
 			throw new DatabaseException("Integrity Violation");			
 		}	
