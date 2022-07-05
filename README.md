@@ -29,3 +29,18 @@ Teste de Integração CityControllerDataIntegrity: Delete deve retornar 400 Bad 
 Teste de Integração EventController: Update deve retornar o evento atualizado e 200 Ok.<br>
 Teste de Integração EventController: Update deve retornar 404 Not Found na tentativa de atualizar um evento com Id inexistente.<br><br>
 Este é um sistema de eventos e cidades com uma relação N-1 entre eles:
+
+```mermaid
+classDiagram
+  City "1" --> "*" Event
+  class Event {
+    -id : Long
+    -name : String
+    -date: localDate
+    -url : String
+  }
+  class City {
+    -id : Long
+    -name : String
+  }
+```
